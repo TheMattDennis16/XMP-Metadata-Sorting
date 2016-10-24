@@ -38,7 +38,8 @@ public class MetaExtractor {
             || name.contains("dance") 
             || name.contains("showbiz")) {
             return Destination.SHOWBIZ_WEBSITE;
-        } else return Destination.ERROR;
+        } 
+        else return Destination.ERROR;
             
     }
     
@@ -59,7 +60,8 @@ public class MetaExtractor {
         }
         catch (IOException e) {
             System.out.println(Errors.errInExtraction);
-        } catch (ImageProcessingException ex) {
+        } 
+        catch (ImageProcessingException ex) {
             System.out.println(Errors.xmpCreationErr);
         }
         return null;
@@ -92,8 +94,7 @@ public class MetaExtractor {
     
     public static void processFolder(String folder) {
          ArrayList<File> files = FileHandling.getFilesInPath(folder);
-         for (File file : files)
-         {
+         for (File file : files) {
              String copyrightNotice = extractFromFile(file);
              if(copyrightNotice == null) {
                  System.out.println(Errors.noCopyrightFound);

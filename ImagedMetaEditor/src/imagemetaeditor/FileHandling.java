@@ -3,7 +3,6 @@ package imagemetaeditor;
 import java.util.ArrayList;
 import java.io.File;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
@@ -21,11 +20,9 @@ public class FileHandling {
         }
     }
     
-    public static ArrayList<File> getFilesInPath(String file)
-    {
+    public static ArrayList<File> getFilesInPath(String file) {
         ArrayList<File> files = new ArrayList<>();
-        try
-        {
+        try {
             File[] filesArray = new File(file).listFiles(File::isFile);
             
             if(filesArray.length == 0) {
@@ -37,8 +34,7 @@ public class FileHandling {
                 files.add(fileInDirectory);
             }
         }
-        catch (Exception e)
-        {
+        catch (Exception e) {
             System.out.println(Errors.errInFileHandling);
             files = null;
         }
